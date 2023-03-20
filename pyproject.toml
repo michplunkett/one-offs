@@ -7,6 +7,9 @@ license = "MIT"
 readme = "README.md"
 packages = [{include = "one_offs"}]
 
+[tool.black]
+line-length = 80
+
 [tool.poetry.dependencies]
 python = "^3.11"
 responses = "^0.23.1"
