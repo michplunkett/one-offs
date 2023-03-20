@@ -16,6 +16,7 @@ responses = "^0.23.1"
 requests = "^2.28.2"
 black = "^23.1.0"
 pylint = "^2.17.0"
+py-googletrans = "^1.2"
 
 
 [build-system]
