@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "one-offs"
+version = "0.1.0"
+description = ""
+authors = ["michplunkett <michplunkett@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "one_offs"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+responses = "^0.23.1"
+requests = "^2.28.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
