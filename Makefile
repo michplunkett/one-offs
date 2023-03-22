@@ -3,7 +3,7 @@
 
 .PHONY: format
 format:
-	black test/
+	black test/ --line-length=80
 
 .PHONY: lint
 lint:
