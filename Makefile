@@ -3,11 +3,11 @@
 
 .PHONY: format
 format:
-	black test/ --line-length=80
+	black test/ google_translate_pdfs/ --line-length=80
 
 .PHONY: lint
 lint:
-	pylint test/
+	pylint test/ google_translate_pdfs/
 
 .PHONY: test
 test:
