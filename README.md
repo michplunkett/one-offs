@@ -9,7 +9,7 @@ This repository will house any one-off side projects I create on behalf of other
 ## Use the Google Translate API to translate a set of PDFs
 The `google_translate_pdfs` package translates all PDFs in the `google_translate_pdfs/data/input` folder. To run it, run the `make translate` command.
 
-To change the language settings, change the source text language and target language using `ISO 639-1` language codes in the `google_translate_pdfs/__main__.py` file.
+To change the language settings, change the source text language and target language using [`ISO 639-1` language codes](https://www.loc.gov/standards/iso639-2/php/code_list.php) in the `google_translate_pdfs/__main__.py` file.
 ```python
 if __name__ == "__main__":
     main(source_text_language, target_language)
