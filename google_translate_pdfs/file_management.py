@@ -6,21 +6,19 @@ Translate API inputs and outputs.
 import csv
 import os
 import pdfplumber
-from util.constants import ENCODING_STANDARD
+from util.constants import ENCODING_STANDARD, EXTENSION_PDF
 
 BASE_DIR = os.getcwd()
 FOLDER_INPUT = BASE_DIR + "/google_translate_pdfs/data/input/"
 FOLDER_OUTPUT = BASE_DIR + "/google_translate_pdfs/data/output/"
 
 
-def get_files_to_translate(extension=""):
+def get_files_to_translate():
     file_names = []
     for f in os.listdir(FOLDER_INPUT):
         _, ext = os.path.splitext(f)
-        if (
-            extension != "" and ext.lower() == extension.lower()
-        ) or extension == "":
-            file_names.append(f.replace("\t+", " ").replace("\n", " "))
+        if ext.lower() == EXTENSION_PDF.lower():
+            file_names.append(f)
 
     return file_names
 

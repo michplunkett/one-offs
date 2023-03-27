@@ -10,7 +10,6 @@ from google_translate_pdfs.file_management import (
 )
 from google_translate_pdfs.translation import gcloud_translate
 from util.constants import (
-    EXTENSION_PDF,
     ISO_LANG_CODE_ENGLISH,
     ISO_LANG_CODE_FRENCH,
 )
@@ -27,7 +26,7 @@ def main(src_lang, target_lang):
             target language
     """
 
-    pdf_files = get_files_to_translate(EXTENSION_PDF)
+    pdf_files = get_files_to_translate()
     for file in pdf_files:
         file_text = get_file_text(file)
         filtered_file_text = list(filter(lambda t: t != "", file_text))
