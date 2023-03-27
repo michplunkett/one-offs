@@ -16,3 +16,8 @@ test:
 .PHONY: test-and-fail
 test-and-fail:
 	pytest -vsx test/
+
+# One-off run commands
+.PHONY: translate
+translate:
+	python -m google_translate_pdfs
