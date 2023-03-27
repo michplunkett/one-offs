@@ -40,4 +40,6 @@ def main(src_lang, target_lang):
 
 
 if __name__ == "__main__":
+    # For a list of ISO 639-1, go here:
+    # https://www.loc.gov/standards/iso639-2/php/code_list.php
     main(ISO_LANG_CODE_FRENCH, ISO_LANG_CODE_ENGLISH)
