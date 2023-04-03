@@ -5,7 +5,7 @@ ENCODING_STANDARD = 'utf-8'
 EXTENSION_PDF = '.pdf'
 
 # ISO 639-1 language codes
-ISO_LANGUAGES = languages = [
+ISO_LANGUAGES = [
     ('aa', 'Afar'),
     ('ab', 'Abkhazian'),
     ('af', 'Afrikaans'),
