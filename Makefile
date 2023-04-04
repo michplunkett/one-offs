@@ -3,11 +3,11 @@
 
 .PHONY: format
 format:
-	black test/ google_translate_pdfs/ --line-length=80
+	black test/ google_translate_pdfs/ util/ --line-length=80
 
 .PHONY: lint
 lint:
-	pylint test/ google_translate_pdfs/
+	pylint test/ google_translate_pdfs/ util/
 
 .PHONY: test
 test:
@@ -20,4 +20,4 @@ test-and-fail:
 # One-off run commands
 .PHONY: translate
 translate:
-	python -m google_translate_pdfs
+	python -m google_translate_pdfs --source=$(source) --target=$(target)
