@@ -7,13 +7,10 @@ This repository will house any one-off side projects I create on behalf of other
 2. Run the `poetry init` command from the base folder of this repository.
 
 ## Use the Google Translate API to translate a set of PDFs
-The `google_translate_pdfs` package translates all PDFs in the `google_translate_pdfs/data/input` folder. To run it, run the `make translate` command.
-
-To change the language settings, change the source text language and target language using [`ISO 639-1` language codes](https://www.loc.gov/standards/iso639-2/php/code_list.php) in the `google_translate_pdfs/__main__.py` file.
-```python
-if __name__ == "__main__":
-    main(source_text_language, target_language)
-```
+The `google_translate_pdfs` package translates all PDFs in the `google_translate_pdfs/data/input` folder.\
+To run it, run this command: `make translate source=[source_lang] target=[target_lang]`
+   - The source and target language must be valid [`ISO 639-1` language codes](https://www.loc.gov/standards/iso639-2/php/code_list.php) values.
+   - Example: `make translate source=fr target=en`
 
 ### Steps to run
 1. Set up your GCloud authentication via this set of instructions: [Link](https://codelabs.developers.google.com/codelabs/cloud-translation-python3#0)
