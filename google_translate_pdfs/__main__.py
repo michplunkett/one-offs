@@ -3,28 +3,67 @@ This file runs the translation process for a set of PDFs housed in the
 /data/input folder.
 """
 
+import argparse
 from google_translate_pdfs.file_management import (
     get_file_text,
     get_files_to_translate,
     write_translation_to_csv,
 )
 from google_translate_pdfs.translation import gcloud_translate
-from util.constants import (
-    ISO_LANG_CODE_ENGLISH,
-    ISO_LANG_CODE_FRENCH,
-)
+from util.constants import ISO_LANGUAGES
+import sys
 
 
-def main(src_lang, target_lang):
+def main():
     """
     The process runner for the translation process.
 
-    Inputs:
-        src_lang (string): an ISO 639-1 language code for the text's original
-            language
-        target_language (string): an ISO 639-1 language code for the text's
-            target language
+    For a list of ISO 639-1, go here:
+    https://www.loc.gov/standards/iso639-2/php/code_list.php
     """
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--source",
+        help="Set the source documents' language",
+        type=str,
+        default="",
+    )
+
+    parser.add_argument(
+        "--target",
+        help="Set the target translation language",
+        type=str,
+        default="",
+    )
+
+    args = parser.parse_args()
+
+    source_lang = args.source.strip()
+    target_lang = args.target.strip()
+
+    if not source_lang or len(source_lang) != 2:
+        print(
+            "You did not include a source language or you submitted one "
+            "that was not two letters length."
+        )
+        sys.exit()
+
+    if not target_lang or len(target_lang) != 2:
+        print(
+            "You did not include a target language or you submitted one "
+            "that was not two letters length."
+        )
+        sys.exit()
+
+    if source_lang not in ISO_LANGUAGES:
+        print(f"You submitted a non-ISO 639-1 source language: {source_lang}")
+        sys.exit()
+
+    if target_lang not in ISO_LANGUAGES:
+        print(f"You submitted a non-ISO 639-1 target language: {target_lang}")
+        sys.exit()
 
     pdf_files = get_files_to_translate()
     for file in pdf_files:
@@ -32,7 +71,9 @@ def main(src_lang, target_lang):
         filtered_file_text = list(filter(lambda t: t != "", file_text))
         if len(filtered_file_text) > 0:
             print(f"Translating {file}.")
-            translated_text = gcloud_translate(src_lang, target_lang, file_text)
+            translated_text = gcloud_translate(
+                source_lang, target_lang, file_text
+            )
             write_translation_to_csv(file, file_text, translated_text)
             print(f"Done writing translated output for {file}.")
         else:
@@ -40,6 +81,4 @@ def main(src_lang, target_lang):
 
 
 if __name__ == "__main__":
-    # For a list of ISO 639-1, go here:
-    # https://www.loc.gov/standards/iso639-2/php/code_list.php
-    main(ISO_LANG_CODE_FRENCH, ISO_LANG_CODE_ENGLISH)
+    main()
