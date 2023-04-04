@@ -20,4 +20,4 @@ test-and-fail:
 # One-off run commands
 .PHONY: translate
 translate:
-	python -m google_translate_pdfs
+	python -m google_translate_pdfs --source=$(source) --target=$(target)
