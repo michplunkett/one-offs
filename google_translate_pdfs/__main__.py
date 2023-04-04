@@ -46,14 +46,14 @@ def main():
     if not source_lang or len(source_lang) != 2:
         print(
             "You did not include a source language or you submitted one "
-            "that was not two letters length."
+            "that was not two-letters in length."
         )
         sys.exit()
 
     if not target_lang or len(target_lang) != 2:
         print(
             "You did not include a target language or you submitted one "
-            "that was not two letters length."
+            "that was not two-letters in length."
         )
         sys.exit()
 
