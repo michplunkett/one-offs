@@ -4,9 +4,20 @@ Translate API inputs and outputs.
 """
 
 import csv
+import io
 import os
-import pdfplumber
-from util.constants import ENCODING_STANDARD, EXTENSION_PDF
+
+from pdfminer.converter import TextConverter
+from pdfminer.high_level import extract_text, extract_pages
+from pdfminer.layout import LAParams
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfpage import PDFPage
+
+from util.constants import (
+    ENCODING_STANDARD,
+    EXTENSION_PDF,
+    FILE_OPEN_MODE_BINARY_READ,
+)
 
 BASE_DIR = os.getcwd()
 FOLDER_INPUT = BASE_DIR + "/google_translate_pdfs/data/input/"
@@ -24,20 +35,24 @@ def get_files_to_translate():
 
 
 def get_file_text(file_name):
+    fp = open(FOLDER_INPUT + file_name, FILE_OPEN_MODE_BINARY_READ)
+    resource_manager = PDFResourceManager()
+    return_str = io.StringIO()
+    device = TextConverter(
+        resource_manager,
+        return_str,
+        codec=ENCODING_STANDARD,
+        laparams=LAParams(),
+    )
+    interpreter = PDFPageInterpreter(resource_manager, device)
     file_text = []
-    with pdfplumber.open(FOLDER_INPUT + file_name) as pdf:
-        for page in pdf.pages:
-            file_text.append(
-                page.extract_text(
-                    x_tolerance=3,
-                    y_tolerance=3,
-                    layout=False,
-                    x_density=7.25,
-                    y_density=13,
-                )
-                .replace("\t+", " ")
-                .replace("\n", " ")
-            )
+    for pageNumber, page in enumerate(PDFPage.get_pages(fp)):
+        interpreter.process_page(page)
+        print(return_str.getvalue().encode(ENCODING_STANDARD))
+        # file_text.append(
+        #     return_str.getvalue()
+        #     .encode(ENCODING_STANDARD)
+        # )
 
     return file_text
 

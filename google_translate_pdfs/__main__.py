@@ -71,10 +71,10 @@ def main():
         filtered_file_text = list(filter(lambda t: t != "", file_text))
         if len(filtered_file_text) > 0:
             print(f"Translating {file}.")
-            translated_text = gcloud_translate(
-                source_lang, target_lang, file_text
-            )
-            write_translation_to_csv(file, file_text, translated_text)
+            # translated_text = gcloud_translate(
+            #     source_lang, target_lang, file_text
+            # )
+            # write_translation_to_csv(file, file_text, translated_text)
             print(f"Done writing translated output for {file}.")
         else:
             print(f"There was not any parseable text in this file: {file}")
