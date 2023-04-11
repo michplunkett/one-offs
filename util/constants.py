@@ -8,6 +8,9 @@ ENCODING_STANDARD = "utf-8"
 # File extensions
 EXTENSION_PDF = ".pdf"
 
+# File opening modes
+FILE_OPEN_MODE_BINARY_READ = "rb"
+
 # ISO 639-1 language codes
 ISO_LANGUAGES = [
     "aa",
