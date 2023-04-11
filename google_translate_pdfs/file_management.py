@@ -16,7 +16,9 @@ from util.constants import (
     EXTENSION_CSV,
     EXTENSION_JPEG,
     EXTENSION_PDF,
+    FILE_OPEN_WRITE,
     FILE_TYPES_JPEG,
+    STANDARD_DPI,
 )
 
 BASE_DIR = os.getcwd()
@@ -41,8 +43,7 @@ def get_file_text(file_name):
     # Source: https://www.geeksforgeeks.org/python-reading-contents-of-pdf
     # -using-ocr-optical-character-recognition/
     with TemporaryDirectory() as tempdir:
-        # Read in the PDF file at 720 DPI
-        pdf_pages = convert_from_path(FOLDER_INPUT + file_name, 720)
+        pdf_pages = convert_from_path(FOLDER_INPUT + file_name, STANDARD_DPI)
 
         for page_enumeration, page in enumerate(pdf_pages, start=1):
             # Create a file name to store the image
@@ -63,7 +64,7 @@ def write_translation_to_csv(original_file_name, orig_text, trans_text):
     name, _ = os.path.splitext(original_file_name)
     with open(
         FOLDER_OUTPUT + name + EXTENSION_CSV,
-        "w",
+        FILE_OPEN_WRITE,
         encoding=ENCODING_STANDARD,
     ) as csv_file:
         writer = csv.writer(csv_file, delimiter="\t", quotechar='"')
