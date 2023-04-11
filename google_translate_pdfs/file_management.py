@@ -37,6 +37,8 @@ def get_file_text(file_name):
     file_text = []
     image_file_list = []
 
+    # Source: https://www.geeksforgeeks.org/python-reading-contents-of-pdf
+    # -using-ocr-optical-character-recognition/
     with TemporaryDirectory() as tempdir:
         # Read in the PDF file at 720 DPI
         pdf_pages = convert_from_path(FOLDER_INPUT + file_name, 720)
