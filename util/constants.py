@@ -2,11 +2,22 @@
 This file contains any constants that may be used in more than one package.
 """
 
-# Encodings
+# Misc.
 ENCODING_STANDARD = "utf-8"
+STANDARD_DPI = 720
+
+# File open
+FILE_OPEN_WRITE = "w"
+
+# File types
+FILE_TYPES_CSV = "csv"
+FILE_TYPES_JPEG = "jpeg"
+FILE_TYPES_PDF = "pdf"
 
 # File extensions
-EXTENSION_PDF = ".pdf"
+EXTENSION_CSV = "." + FILE_TYPES_CSV
+EXTENSION_JPEG = "." + FILE_TYPES_JPEG
+EXTENSION_PDF = "." + FILE_TYPES_PDF
 
 # ISO 639-1 language codes
 ISO_LANGUAGES = [

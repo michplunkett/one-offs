@@ -68,11 +68,11 @@ def main():
     pdf_files = get_files_to_translate()
     for file in pdf_files:
         file_text = get_file_text(file)
-        filtered_file_text = list(filter(lambda t: t != "", file_text))
+        filtered_file_text = list(filter(lambda t: t[1] != "", file_text))
         if len(filtered_file_text) > 0:
             print(f"Translating {file}.")
             translated_text = gcloud_translate(
-                source_lang, target_lang, file_text
+                source_lang, target_lang, [t[1] for t in file_text]
             )
             write_translation_to_csv(file, file_text, translated_text)
             print(f"Done writing translated output for {file}.")
