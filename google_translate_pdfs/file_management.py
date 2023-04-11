@@ -14,8 +14,9 @@ from PIL import Image
 from util.constants import (
     ENCODING_STANDARD,
     EXTENSION_CSV,
-    EXTENSION_JPG,
+    EXTENSION_JPEG,
     EXTENSION_PDF,
+    FILE_TYPES_JPEG,
 )
 
 BASE_DIR = os.getcwd()
@@ -45,8 +46,8 @@ def get_file_text(file_name):
 
         for page_enumeration, page in enumerate(pdf_pages, start=1):
             # Create a file name to store the image
-            filename = f"{tempdir}\\page_{page_enumeration:03}{EXTENSION_JPG}"
-            page.save(filename, "JPEG")
+            filename = f"{tempdir}\\page_{page_enumeration:03}{EXTENSION_JPEG}"
+            page.save(filename, FILE_TYPES_JPEG.upper())
             image_file_list.append(filename)
 
         for i, image_file in enumerate(image_file_list):
