@@ -4,7 +4,10 @@ This file contains any constants that may be used in more than one package.
 
 # Misc.
 ENCODING_STANDARD = "utf-8"
+STANDARD_DPI = 720
 
+# File open
+FILE_OPEN_WRITE = "w"
 
 # File types
 FILE_TYPES_CSV = "csv"
