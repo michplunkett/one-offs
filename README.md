@@ -3,8 +3,11 @@
 This repository will house any one-off side projects I create on behalf of others or small scripts I write to accomplish x or y tasks.
 
 ## General steps to run a module in this repository
-1. Install the [Poetry](https://github.com/python-poetry/poetry) virtual environment container at the base directory for this repository.
-2. Run the `poetry init` command from the base folder of this repository.
+1. Install `tesseract`.
+   - For mac you can run: `brew install tesseract`
+   - For installation on other operating systems, please reference [this document.](https://tesseract-ocr.github.io/tessdoc/Installation.html)
+2. Install the [Poetry](https://github.com/python-poetry/poetry) virtual environment container at the base directory for this repository.
+3. Run the `poetry init` command from the base folder of this repository.
 
 ## Use the Google Translate API to translate a set of PDFs
 The `google_translate_pdfs` package translates all PDFs in the `google_translate_pdfs/data/input` folder.\
