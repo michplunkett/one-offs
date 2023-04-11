@@ -8,12 +8,12 @@ ENCODING_STANDARD = "utf-8"
 
 # File types
 FILE_TYPES_CSV = "csv"
-FILE_TYPES_JPG = "jpg"
+FILE_TYPES_JPEG = "jpeg"
 FILE_TYPES_PDF = "pdf"
 
 # File extensions
 EXTENSION_CSV = "." + FILE_TYPES_CSV
-EXTENSION_JPG = "." + FILE_TYPES_JPG
+EXTENSION_JPEG = "." + FILE_TYPES_JPEG
 EXTENSION_PDF = "." + FILE_TYPES_PDF
 
 # ISO 639-1 language codes
