@@ -3,9 +3,9 @@
 This repository will house any one-off side projects I create on behalf of others or small scripts I write to accomplish x or y tasks.
 
 ## General steps to run a module in this repository
-1. Install `tesseract`.
-   - For mac you can run: `brew install tesseract`
-   - For installation on other operating systems, please reference [this document.](https://tesseract-ocr.github.io/tessdoc/Installation.html)
+1. Install [`tesseract`](https://github.com/tesseract-ocr/tesseract).
+   - To install `tesseract` on a mac, you can run the following command: `brew install tesseract`
+   - To install `tesseract` on any other operating systems, please reference [this document.](https://tesseract-ocr.github.io/tessdoc/Installation.html)
 2. Install the [Poetry](https://github.com/python-poetry/poetry) virtual environment container at the base directory for this repository.
 3. Run the `poetry init` command from the base folder of this repository.
 
