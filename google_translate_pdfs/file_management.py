@@ -4,19 +4,18 @@ Translate API inputs and outputs.
 """
 
 import csv
-import io
 import os
+from tempfile import TemporaryDirectory
 
-from pdfminer.converter import TextConverter
-from pdfminer.high_level import extract_text, extract_pages
-from pdfminer.layout import LAParams
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-from pdfminer.pdfpage import PDFPage
+from pytesseract import image_to_string
+from pdf2image import convert_from_path
+from PIL import Image
 
 from util.constants import (
     ENCODING_STANDARD,
+    EXTENSION_CSV,
+    EXTENSION_JPG,
     EXTENSION_PDF,
-    FILE_OPEN_MODE_BINARY_READ,
 )
 
 BASE_DIR = os.getcwd()
@@ -35,24 +34,24 @@ def get_files_to_translate():
 
 
 def get_file_text(file_name):
-    fp = open(FOLDER_INPUT + file_name, FILE_OPEN_MODE_BINARY_READ)
-    resource_manager = PDFResourceManager()
-    return_str = io.StringIO()
-    device = TextConverter(
-        resource_manager,
-        return_str,
-        codec=ENCODING_STANDARD,
-        laparams=LAParams(),
-    )
-    interpreter = PDFPageInterpreter(resource_manager, device)
     file_text = []
-    for pageNumber, page in enumerate(PDFPage.get_pages(fp)):
-        interpreter.process_page(page)
-        print(return_str.getvalue().encode(ENCODING_STANDARD))
-        # file_text.append(
-        #     return_str.getvalue()
-        #     .encode(ENCODING_STANDARD)
-        # )
+    image_file_list = []
+
+    with TemporaryDirectory() as tempdir:
+        # Read in the PDF file at 720 DPI
+        pdf_pages = convert_from_path(FOLDER_INPUT + file_name, 720)
+
+        for page_enumeration, page in enumerate(pdf_pages, start=1):
+            # Create a file name to store the image
+            filename = f"{tempdir}\\page_{page_enumeration:03}{EXTENSION_JPG}"
+            page.save(filename, "JPEG")
+            image_file_list.append(filename)
+
+        for i, image_file in enumerate(image_file_list):
+            text = str((image_to_string(Image.open(image_file))))
+            file_text.append(
+                (i + 1, text.replace("\t+", " ").replace("\n", " "))
+            )
 
     return file_text
 
@@ -60,11 +59,11 @@ def get_file_text(file_name):
 def write_translation_to_csv(original_file_name, orig_text, trans_text):
     name, _ = os.path.splitext(original_file_name)
     with open(
-        FOLDER_OUTPUT + name + ".csv",
+        FOLDER_OUTPUT + name + EXTENSION_CSV,
         "w",
         encoding=ENCODING_STANDARD,
     ) as csv_file:
         writer = csv.writer(csv_file, delimiter="\t", quotechar='"')
         writer.writerow(["page", "original_text", "translated_text"])
-        for i, text in enumerate(orig_text):
-            writer.writerow([i + 1, text, trans_text[i]])
+        for i, text_tuple in enumerate(orig_text):
+            writer.writerow([text_tuple[0], text_tuple[1], trans_text[i]])
