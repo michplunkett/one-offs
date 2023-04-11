@@ -15,7 +15,7 @@ python = "^3.11"
 black = "^23.1.0"
 pylint = "^2.17.0"
 google-cloud-translate = "2.0.1"
-pdfplumber = "^0.8.0"
+pdfminer = "^20191125"
 
 
 [build-system]
