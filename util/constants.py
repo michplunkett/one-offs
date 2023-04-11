@@ -2,14 +2,19 @@
 This file contains any constants that may be used in more than one package.
 """
 
-# Encodings
+# Misc.
 ENCODING_STANDARD = "utf-8"
 
-# File extensions
-EXTENSION_PDF = ".pdf"
 
-# File opening modes
-FILE_OPEN_MODE_BINARY_READ = "rb"
+# File types
+FILE_TYPES_CSV = "csv"
+FILE_TYPES_JPG = "jpg"
+FILE_TYPES_PDF = "pdf"
+
+# File extensions
+EXTENSION_CSV = "." + FILE_TYPES_CSV
+EXTENSION_JPG = "." + FILE_TYPES_JPG
+EXTENSION_PDF = "." + FILE_TYPES_PDF
 
 # ISO 639-1 language codes
 ISO_LANGUAGES = [
