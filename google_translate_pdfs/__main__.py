@@ -1,6 +1,6 @@
 """
-This file runs the translation process for a set of PDFs housed in the
-/data/input folder.
+This file runs the translation process for the set of PDFs housed in the
+./data/input folder.
 """
 
 import argparse
