@@ -4,14 +4,15 @@ This file runs the translation process for the set of PDFs housed in the
 """
 
 import argparse
-from google_translate_pdfs.file_management import (
-    get_file_text,
-    get_files_to_translate,
-    write_translation_to_csv,
-)
+import os
+import sys
+
+from google_translate_pdfs.file_management import write_translation_to_csv
 from google_translate_pdfs.translation import gcloud_translate
 from util.constants import ISO_LANGUAGES
-import sys
+from util.pdf import get_files, get_file_text
+
+FOLDER_INPUT = os.getcwd() + "/google_translate_pdfs/data/input/"
 
 
 def main():
@@ -65,9 +66,9 @@ def main():
         print(f"You submitted a non-ISO 639-1 target language: {target_lang}")
         sys.exit()
 
-    pdf_files = get_files_to_translate()
+    pdf_files = get_files(FOLDER_INPUT)
     for file in pdf_files:
-        file_text = get_file_text(file)
+        file_text = get_file_text(file, FOLDER_INPUT)
         filtered_file_text = list(filter(lambda t: t[1] != "", file_text))
         if len(filtered_file_text) > 0:
             print(f"Translating {file}.")
