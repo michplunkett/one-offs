@@ -6,6 +6,7 @@
 # Project-specific ignores
 google_translate_pdfs/data
 invisible_institute/data
+pdf_parser/data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
