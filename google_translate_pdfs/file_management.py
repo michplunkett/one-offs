@@ -54,7 +54,10 @@ def get_file_text(file_name):
         for i, image_file in enumerate(image_file_list):
             text = str((image_to_string(Image.open(image_file))))
             file_text.append(
-                (i + 1, text.replace("\t+", " ").replace("\n", " "))
+                (
+                    i + 1,
+                    text.replace("\t+", " ").replace("\n", " "),
+                )
             )
 
     return file_text
