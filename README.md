@@ -19,5 +19,15 @@ To run it, run this command: `make translate source=[source_lang] target=[target
 1. Set up your GCloud authentication via this set of instructions: [Link](https://codelabs.developers.google.com/codelabs/cloud-translation-python3#0)
    - Run the `gcloud auth application-default login` command to save the credentials for your project to your computer.
 2. Put the pdf files you want translated in the `google_translate_pdfs/data/input` folder.
-   - The `google_translate_pdfs/data` folder is in the `.gitignore` file, so you don't have to worry about them being potentially leaked into the repository.
+   - The `google_translate_pdfs/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
 3. Run the `make translate` command from the base folder of the repository and your output files will be in the `google_translate_pdfs/data/output` folder.
+
+## Use the PDF-Parser to parse your PDFs into txt files
+The `pdf_parser` package translates all PDFs in the `pdf_parser/data/input` folder.\
+To run it, run this command: `make parse-pdf`
+
+### Steps to run
+1. Put the pdf files you want parsed in the `pdf_parser/data/input` folder.
+   - The `pdf_parser/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
+2. Run the `make parse-pdf` command from the base folder of the repository and your output files will be in the `pdf_parser/data/output` folder.
+
