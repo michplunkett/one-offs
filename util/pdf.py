@@ -2,11 +2,11 @@
 This files contains PDF-oriented utilitiy functions.
 """
 import os
+from tempfile import TemporaryDirectory
 
-from pytesseract import image_to_string
 from pdf2image import convert_from_path
 from PIL import Image
-from tempfile import TemporaryDirectory
+from pytesseract import image_to_string
 
 from util.constants import (
     EXTENSION_JPEG,

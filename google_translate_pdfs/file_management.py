@@ -6,11 +6,7 @@ Translate API inputs and outputs.
 import csv
 import os
 
-from util.constants import (
-    ENCODING_STANDARD,
-    EXTENSION_CSV,
-    FILE_OPEN_WRITE,
-)
+from util.constants import ENCODING_STANDARD, EXTENSION_CSV, FILE_OPEN_WRITE
 
 BASE_DIR = os.getcwd()
 FOLDER_OUTPUT = BASE_DIR + "/google_translate_pdfs/data/output/"
