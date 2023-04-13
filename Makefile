@@ -3,6 +3,7 @@
 
 .PHONY: format
 format:
+	isort test/ google_translate_pdfs/ util/ --line-length=80 --profile=black
 	black test/ google_translate_pdfs/ util/ --line-length=80
 
 .PHONY: lint
