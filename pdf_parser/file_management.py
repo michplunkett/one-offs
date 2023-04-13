@@ -6,7 +6,7 @@ from util.constants import (
     EXTENSION_TXT,
 )
 
-FOLDER_OUTPUT = os.getcwd() + "/google_translate_pdfs/data/output/"
+FOLDER_OUTPUT = os.getcwd() + "/pdf_parser/data/output/"
 
 
 def write_file_text_to_txt(original_file_name, text):

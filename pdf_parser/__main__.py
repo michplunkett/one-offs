@@ -18,7 +18,7 @@ def main():
         print(f"Done getting text from {file}.")
         filtered_file_text = list(filter(lambda t: t[1] != "", file_text))
         if len(filtered_file_text) > 0:
-            write_file_text_to_txt(file, file_text)
+            write_file_text_to_txt(file, [t[1] for t in file_text])
             print(f"Done writing text output for {file}.")
         else:
             print(f"There was not any parseable text in this file: {file}")
