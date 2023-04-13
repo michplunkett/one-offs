@@ -10,5 +10,5 @@
 ```
 PUT THE `make test` OUTPUT HERE
 ```
-- [ ] I ran `pylint` and have made the bulk of changes that it has requested.
-- [ ] I ran the `black` formatter and pushed the changes.
+- [ ] I ran `make lint` and have made the bulk of changes that it has requested.
+- [ ] I ran `make format` and pushed the changes.
