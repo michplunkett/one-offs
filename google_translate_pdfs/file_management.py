@@ -26,4 +26,10 @@ def write_translation_to_csv(original_file_name, orig_text, trans_text):
         writer = csv.writer(csv_file, delimiter="\t", quotechar='"')
         writer.writerow(["page", "original_text", "translated_text"])
         for i, text_tuple in enumerate(orig_text):
-            writer.writerow([text_tuple[0], text_tuple[1], trans_text[i]])
+            writer.writerow(
+                [
+                    text_tuple[0],
+                    text_tuple[1].replace("\t+", " ").replace("\n", " "),
+                    trans_text[i],
+                ]
+            )

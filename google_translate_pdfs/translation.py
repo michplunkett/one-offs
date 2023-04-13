@@ -41,6 +41,8 @@ def gcloud_translate(src_lang, target_lang, text):
                 resp[KEY_TRANSLATED_TEXT]
                 .replace("&#39;", "'")
                 .replace("&quot;", '"')
+                .replace("\t+", " ")
+                .replace("\n", " ")
             )
 
     return results
