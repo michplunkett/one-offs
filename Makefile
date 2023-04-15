@@ -3,12 +3,12 @@
 
 .PHONY: format
 format:
-	isort test/ google_translate_pdfs/ util/ --line-length=80 --profile=black
-	black test/ google_translate_pdfs/ util/ --line-length=80
+	isort test/ google_translate_pdfs/ geocode_verifier/ util/ --line-length=80 --profile=black
+	black test/ google_translate_pdfs/ geocode_verifier/ util/ --line-length=80
 
 .PHONY: lint
 lint:
-	pylint test/ google_translate_pdfs/ util/
+	pylint test/ google_translate_pdfs/ geocode_verifier/ util/
 
 .PHONY: test
 test:
