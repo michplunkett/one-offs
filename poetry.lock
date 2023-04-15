@@ -77,6 +77,20 @@ files = [
 ]
 
 [[package]]
+name = "census"
+version = "0.8.19"
+description = "A wrapper for the US Census Bureau's API"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "census-0.8.19-py3-none-any.whl", hash = "sha256:07341123fcbffad5fef613320a4dce05139050f0c2b2e6963d254e5973258eae"},
+]
+
+[package.dependencies]
+requests = ">=1.1.0"
+
+[[package]]
 name = "certifi"
 version = "2022.12.7"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -911,4 +925,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "22cab66feb5b4dc34acf6e43790294d34f815e3580bc8648f38ce5f3d5a24852"
+content-hash = "bb1446d566797316f717b6352b9015f9380dbaf2b5ac0d86e21a07e76205798a"
