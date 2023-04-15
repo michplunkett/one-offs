@@ -3,7 +3,7 @@
 
 .PHONY: format
 format:
-	isort test/ google_translate_pdfs/ geocode_verifier/ util/ --line-length=80 --profile=black
+	isort test/ google_translate_pdfs/ geocode_verifier/ util/ --sg="**/data" --line-length=80 --profile=black
 	black test/ google_translate_pdfs/ geocode_verifier/ util/ --line-length=80
 
 .PHONY: lint
@@ -26,3 +26,7 @@ translate:
 .PHONY: parse-pdf
 parse-pdf:
 	python -m pdf_parser
+
+.PHONY: verify-geocodes
+verify-geocodes:
+	python -m geocode_verifier
