@@ -1,14 +1,11 @@
 [tool.poetry]
 name = "one-offs"
 version = "0.1.0"
-description = ""
+description = "This repository will house any one-off side projects I create on behalf of others or small scripts I write to accomplish x or y tasks."
 authors = ["michplunkett <michplunkett@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "one_offs"}]
-
-[tool.black]
-line-length = 80
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -20,6 +17,12 @@ pytesseract = "^0.3.10"
 pdf2image = "^1.16.3"
 isort = "^5.12.0"
 
+[tool.black]
+line-length = 80
+
+[tool.isort]
+profile= "black"
+line_length = 80
 
 [build-system]
 requires = ["poetry-core"]
