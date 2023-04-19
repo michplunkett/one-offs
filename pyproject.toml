@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "one-offs"
 version = "0.1.0"
-description = ""
+description = "This repository will house any one-off side projects I create on behalf of others or small scripts I write to accomplish x or y tasks."
 authors = ["michplunkett <michplunkett@gmail.com>"]
 license = "MIT"
 readme = "README.md"
