@@ -11,7 +11,7 @@ packages = [{include = "one_offs"}]
 line-length = 80
 
 [tool.isort]
-line-length = 80
+profile= "black"
 
 [tool.poetry.dependencies]
 python = "^3.11"
