@@ -10,9 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-        with:
-          python-version: 3.12
-      - uses: https://github.com/psf/black@stable
+      - uses: psf/black@stable
         with:
           src: ./test/ ./google_translate_pdfs/ ./geocode_verifier/ ./util/
           options: --check --verbose
@@ -22,8 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-        with:
-          python-version: 3.12
       - uses: isort/isort-action@master
         with:
           configuration: --check-only --diff
