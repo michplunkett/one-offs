@@ -12,7 +12,6 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: psf/black@stable
         with:
-          src: ./test/ ./google_translate_pdfs/ ./geocode_verifier/ ./util/
           options: --check --verbose
           version: ~= 23.1.0
   ISort:
