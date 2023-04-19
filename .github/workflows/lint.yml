@@ -23,4 +23,4 @@ jobs:
         with:
           configuration: --check-only --diff
           requirementsFiles: pyproject.toml
-          sortPaths: ./test/ ./pdf_parser ./google_translate_pdfs/ ./geocode_verifier/ ./util/
+          sortPaths: ./test/ ./pdf_parser/ ./google_translate_pdfs/ ./geocode_verifier/ ./util/
