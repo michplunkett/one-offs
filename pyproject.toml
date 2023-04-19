@@ -10,6 +10,9 @@ packages = [{include = "one_offs"}]
 [tool.black]
 line-length = 80
 
+[tool.isort]
+line-length = 80
+
 [tool.poetry.dependencies]
 python = "^3.11"
 black = "^23.1.0"
