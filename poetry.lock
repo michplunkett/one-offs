@@ -452,6 +452,17 @@ plugins = ["setuptools"]
 requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
 [[package]]
+name = "jellyfish"
+version = "0.6.1"
+description = "a library for doing approximate and phonetic matching of strings."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "jellyfish-0.6.1.tar.gz", hash = "sha256:5104e45a2b804b48a46a92a5e6d6e86830fe60ae83b1da32c867402c8f4c2094"},
+]
+
+[[package]]
 name = "lazy-object-proxy"
 version = "1.9.0"
 description = "A fast and thorough lazy object proxy."
@@ -852,6 +863,20 @@ secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "p
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
+name = "us"
+version = "2.0.2"
+description = "US state meta information and other fun stuff"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "us-2.0.2.tar.gz", hash = "sha256:cb11ad0d43deff3a1c3690c74f0c731cff5b862c73339df2edd91133e1496fbc"},
+]
+
+[package.dependencies]
+jellyfish = "0.6.1"
+
+[[package]]
 name = "wrapt"
 version = "1.15.0"
 description = "Module for decorators, wrappers and monkey patching."
@@ -939,4 +964,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "45b7c2908908cd1e621d3b8b0251097273680c3b2ff8e9c5d71d7f15e2dfcdac"
+content-hash = "4c14500abc561bb50af4a38d0c8e56d53de25cabf91277bf85be3c47e7a5bb41"
