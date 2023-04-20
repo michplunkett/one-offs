@@ -3,7 +3,7 @@ import os
 import census
 
 
-def create_client():
+def get_client():
     """
     Gets the census API client.
 
