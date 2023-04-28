@@ -14,7 +14,7 @@ def get_client():
 
 
 def validate_address(address_info, client):
-    """"
+    """
     Takes address information and returns validation on that address from the
     Google Maps API. For documentation, please check this link:
     https://developers.google.com/maps/documentation/address-validation/requests-validate-address
@@ -37,4 +37,3 @@ def validate_address(address_info, client):
     address_info["enableUspsCass"] = True
 
     return client.addressvalidation(address_info)
-
