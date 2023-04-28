@@ -21,12 +21,14 @@ googlemaps = "^4.10.0"
 us = "^2.0.2"
 
 [tool.black]
+extend-exclude='''.data\/'''
 line-length = 80
 
 [tool.isort]
 profile= "black"
 line_length = 80
-skip = [".gitignore", "**/data/"]
+skip = [".gitignore"]
+skip_glob = ["**data/*"]
 
 [build-system]
 requires = ["poetry-core"]

@@ -3,12 +3,12 @@
 
 .PHONY: format
 format:
-	isort test/ pdf_parser/ google_translate_pdfs/ util/
-	black test/ pdf_parser/ google_translate_pdfs/ util/
+	isort test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
+	black test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
 
 .PHONY: lint
 lint:
-	pylint test/ pdf_parser/ google_translate_pdfs/ util/
+	pylint test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
 
 .PHONY: test
 test:
