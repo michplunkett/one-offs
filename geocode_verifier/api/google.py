@@ -3,17 +3,21 @@ import os
 import googlemaps
 
 
-def get_client():
+def _get_client():
     """
     Gets the GoogleMaps API client.
 
     :return: googlemaps.Client
     """
     key = os.getenv("GOOGLE_MAPS_API_KEY")
+
+    # Make sure there is an API key.
+    assert key != ""
+
     return googlemaps.Client(key)
 
 
-def validate_address(info, client):
+def validate_address(info):
     """
     Takes address information and returns validation on that address from the
     Google Maps API. For documentation, please check this link:
@@ -21,12 +25,12 @@ def validate_address(info, client):
 
     :param dictionary info: A nested dictionary of strings containing
         information about a particular address
-    :param googlemaps.Client client: The client that will be used to make the
-        API call.
 
     :returns The ValidationResult for the query.
     :rtype googlemaps.ValidationResult
     """
+
+    client = _get_client()
 
     # Assert that the necessary fields are there.
     assert bool(info["address"])
