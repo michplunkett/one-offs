@@ -1,5 +1,3 @@
-import os
-
 import censusgeocode as cg
 
 
@@ -17,14 +15,8 @@ def validate_address(info):
     """
 
     # Make sure the fields are there.
-    assert bool(info["address"])
-    assert bool(info["city"])
-    assert bool(info["state"])
-    assert bool(info["zipcode"])
+    assert len(info) == 4
 
     return cg.address(
-        info["address"],
-        city=info["city"],
-        state=info["state"],
-        zip=info["zipcode"],
+        info[0], city=info[1], state=info[2], zip=info[3], returntype="location"
     )
