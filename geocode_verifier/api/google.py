@@ -13,13 +13,13 @@ def get_client():
     return googlemaps.Client(key)
 
 
-def validate_address(address_info, client):
+def validate_address(info, client):
     """
     Takes address information and returns validation on that address from the
     Google Maps API. For documentation, please check this link:
     https://developers.google.com/maps/documentation/address-validation/requests-validate-address
 
-    :param dictionary address_info: A nested dictionary of strings containing
+    :param dictionary info: A nested dictionary of strings containing
         information about a particular address
     :param googlemaps.Client client: The client that will be used to make the
         API call.
@@ -29,11 +29,11 @@ def validate_address(address_info, client):
     """
 
     # Assert that the necessary fields are there.
-    assert bool(address_info["address"])
-    assert bool(address_info["address"]["regionCode"])
-    assert bool(address_info["address"]["addressLines"])
+    assert bool(info["address"])
+    assert bool(info["address"]["regionCode"])
+    assert bool(info["address"]["addressLines"])
 
     # Enable Coding Accuracy Support System
-    address_info["enableUspsCass"] = True
+    info["enableUspsCass"] = True
 
-    return client.addressvalidation(address_info)
+    return client.addressvalidation(info)
