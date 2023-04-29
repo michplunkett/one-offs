@@ -11,5 +11,3 @@
 PUT THE `make test` OUTPUT HERE
 ```
 - [ ] I ran `make lint` and have made the bulk of changes that it has requested.
-- [ ] The `Lint` GitHub Action step is passing.
-  - Manually run `make format` to correct the errors.
