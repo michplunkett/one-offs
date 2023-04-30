@@ -5,7 +5,6 @@ description = "This repository will house any one-off side projects I create on 
 authors = ["michplunkett <michplunkett@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "one_offs"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
