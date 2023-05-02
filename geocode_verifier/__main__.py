@@ -45,17 +45,12 @@ def main():
                         ],
                     }
 
-                    # TODO: If there is an error returned in cg_result, wait
-                    # TODO: 60 seconds and try again.
                     cg_result = cg.validate_address(
                         cg_client, api_dict["addressLines"]
                     )
                     gm_result = gm.validate_address(gm_client, api_dict)[
                         "result"
                     ]
-
-                    # Sleep for half a second after each request.
-                    sleep(0.5)
 
                     output_list.append(
                         [
@@ -75,7 +70,7 @@ def main():
                         ]
                     )
 
-                    if len(output_list) % 20:
+                    if len(output_list) % 20 == 0:
                         print(f"You have parsed {len(output_list)} addresses.")
 
                     # Add google_maps result if present
@@ -102,5 +97,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print("Oh, are we supposed to be validating addresses over here!?")
     main()

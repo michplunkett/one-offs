@@ -1,5 +1,7 @@
 import os
+from time import sleep
 
+import requests
 from censusgeocode import CensusGeocode
 
 CLIENT = None
@@ -32,10 +34,27 @@ def validate_address(client, info):
     # Make sure the fields are there.
     assert len(info) == 4
 
-    return client.address(
-        street=info[0],
-        city=info[1],
-        state=info[2],
-        zip=info[3],
-        returntype="locations",
-    )
+    num_retries = 10
+    pause_duration_seconds = 0.5
+    response = None
+    for _ in range(num_retries):
+        try:
+            response = client.address(
+                street=info[0],
+                city=info[1],
+                state=info[2],
+                zip=info[3],
+                returntype="locations",
+                timeout=5,
+            )
+            if response:
+                break
+        except requests.exceptions.RequestException:
+            print(
+                f"Pausing {pause_duration_seconds} between Census Geocode "
+                f"requests due to error."
+            )
+            sleep(pause_duration_seconds)
+            pass
+
+    return response
