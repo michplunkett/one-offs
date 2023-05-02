@@ -37,9 +37,11 @@ The `geocode_verifier` package translates all CSVs in the `geocode_verifier/data
 To run it, run this command: `make verify-geocodes`
 
 ### Steps to run
-1. Put the CSV files you want parsed in the `geocode_verifier/data/input` folder.
+1. Set up your GCloud authentication via this set of instructions: [Link](https://codelabs.developers.google.com/codelabs/cloud-translation-python3#0)
+   - Run the `gcloud auth application-default login` command to save the credentials for your project to your computer.
+2. Put the CSV files you want parsed in the `geocode_verifier/data/input` folder.
    - The `geocode_verifier/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
-2. Run the `make verify-geocodes` command from the base folder of the repository and your output files will be in the `geocode_verifier/data/output` folder.
+3. Run the `make verify-geocodes` command from the base folder of the repository and your output files will be in the `geocode_verifier/data/output` folder.
 
 ### Needed headers and more general things
 
