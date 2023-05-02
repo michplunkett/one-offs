@@ -27,7 +27,7 @@ The `pdf_parser` package translates all PDFs in the `pdf_parser/data/input` fold
 To run it, run this command: `make parse-pdf`
 
 ### Steps to run
-1. Put the pdf files you want parsed in the `pdf_parser/data/input` folder.
+1. Put the PDF files you want parsed in the `pdf_parser/data/input` folder.
    - The `pdf_parser/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
 2. Run the `make parse-pdf` command from the base folder of the repository and your output files will be in the `pdf_parser/data/output` folder.
 
@@ -37,9 +37,12 @@ The `geocode_verifier` package translates all CSVs in the `geocode_verifier/data
 To run it, run this command: `make verify-geocodes`
 
 ### Steps to run
-1. Put the pdf files you want parsed in the `geocode_verifier/data/input` folder.
+1. Put the CSV files you want parsed in the `geocode_verifier/data/input` folder.
    - The `geocode_verifier/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
 2. Run the `make verify-geocodes` command from the base folder of the repository and your output files will be in the `geocode_verifier/data/output` folder.
 
 ### These are the headers you need on your CSV files
+
+|  id  | address_number | address | city | zipcode | country |
+| :--: | :------------: | :-----: | :--: | :-----: | :-----: |
 
