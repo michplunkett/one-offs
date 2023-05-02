@@ -47,6 +47,8 @@ To run it, run this command: `make verify-geocodes`
 
 |  id  | address_number | address | city | zipcode | state |
 | :--: | :------------: | :-----: | :--: | :-----: | :---: |
+| external unique ID | address number | street and apartment information | city name | zip code | two-character state abbreviation |
+| string or int | float or int | string | string | string | string |
 
 - `city` will be defaulted to `Chicago` if the key is not present.
 - `state` will be defaulted to `IL` if the key is not present.
