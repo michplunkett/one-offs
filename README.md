@@ -41,8 +41,11 @@ To run it, run this command: `make verify-geocodes`
    - The `geocode_verifier/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
 2. Run the `make verify-geocodes` command from the base folder of the repository and your output files will be in the `geocode_verifier/data/output` folder.
 
-### These are the headers you need on your CSV files
+### Needed headers and more general things
 
-|  id  | address_number | address | city | zipcode | country |
-| :--: | :------------: | :-----: | :--: | :-----: | :-----: |
+|  id  | address_number | address | city | zipcode | state |
+| :--: | :------------: | :-----: | :--: | :-----: | :---: |
 
+- `city` will be defaulted to `Chicago` if the key is not present.
+- `state` will be defaulted to `IL` if the key is not present.
+- All addresses are presumed to be in the United States.
