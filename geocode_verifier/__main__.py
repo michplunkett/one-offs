@@ -3,7 +3,7 @@ import os
 from time import sleep
 
 import geocode_verifier.api.census_geocode as cg
-import geocode_verifier.api.google as gm
+import geocode_verifier.api.google_maps as gm
 from util.constants import ENCODING_STANDARD, EXTENSION_CSV, FILE_OPEN_WRITE
 from util.files import read_csv_to_dict
 
