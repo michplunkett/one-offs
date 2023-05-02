@@ -33,7 +33,7 @@ To run it, run this command: `make parse-pdf`
 
 
 ## Use the Geocode Verifier to verify the addresses in your CSVs
-The `geocode_verifier` package translates all CSVs in the `geocode_verifier/data/input` folder.\
+The `geocode_verifier` package confirms the addresses of rows in all CSVs in the `geocode_verifier/data/input` folder.\
 To run it, run this command: `make verify-geocodes`
 
 ### Steps to run
