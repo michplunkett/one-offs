@@ -1,6 +1,5 @@
 import csv
 import os
-from time import sleep
 
 import geocode_verifier.api.census_geocode as cg
 import geocode_verifier.api.google_maps as gm
