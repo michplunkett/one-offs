@@ -40,4 +40,4 @@ def validate_address(info):
     # Enable Coding Accuracy Support System
     info["enableUspsCass"] = True
 
-    return client.addressvalidation(info)
+    return client.addressvalidation()

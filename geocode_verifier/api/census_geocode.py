@@ -18,5 +18,9 @@ def validate_address(info):
     assert len(info) == 4
 
     return cg.address(
-        info[0], city=info[1], state=info[2], zip=info[3], returntype="location"
+        street=info[0],
+        city=info[1],
+        state=info[2],
+        zip=info[3],
+        returntype="locations",
     )

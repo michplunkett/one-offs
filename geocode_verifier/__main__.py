@@ -1,5 +1,6 @@
 import csv
 import os
+from time import sleep
 
 import geocode_verifier.api.census_geocode as cg
 import geocode_verifier.api.google as g
@@ -10,9 +11,9 @@ WRITING_DICT = [
     "id",
     "original_address",
     "googlemaps_verification",
-    "census_verification",
+    "census_geocode_verification",
     "googlemaps_json",
-    "census_json",
+    "census_geocode_json",
 ]
 
 
@@ -23,27 +24,49 @@ def main():
         f = os.path.join(directory, name)
 
         # checking if it is a file
+        output_list = []
         if os.path.isfile(f) and f.endswith(EXTENSION_CSV):
             file_dicts = read_csv_to_dict(f)
-            for v in file_dicts:
-                print(v["id"])
-                if v["address"] and v["zipcode"]:
+            for row in file_dicts:
+                if row["address"] and row["zipcode"]:
                     api_dict = {
                         "address": {
                             "regionCode": "US",
                             "addressLines": [
-                                v["address"],
+                                f"{float(row['address_number']):.0f} "
+                                f"{row['address'].strip()}",
                                 "Chicago",
                                 "IL",
-                                v["zipcode"],
+                                row["zipcode"].strip(),
                             ],
                         }
                     }
+                    print(api_dict)
 
-                    v["cg"] = cg.validate_address(api_dict["address"])
-                    v["g"] = g.validate_address(api_dict)
-                    print(v["cg"])
-                    print(v["g"])
+                    cg_result = cg.validate_address(
+                        api_dict["address"]["addressLines"]
+                    )
+                    print(cg_result)
+                    gm_result = g.validate_address(api_dict)
+                    print(gm_result)
+                    sleep(0.5)
+
+                    output_list.append(
+                        [
+                            row["id"],
+                            api_dict["address"]["addressLines"].join(", "),
+                            "",
+                            len(cg_result) > 0,
+                        ]
+                    )
+
+                    # Add google_maps result if present
+                    if len(output_list[-1][2]):
+                        output_list[-1][4] = gm_result
+
+                    # Add census_geocode result if present
+                    if len(output_list[-1][3]):
+                        output_list[-1][5] = cg_result
 
                 with open(
                     directory + name + EXTENSION_CSV,
@@ -52,17 +75,8 @@ def main():
                 ) as csv_file:
                     writer = csv.writer(csv_file, delimiter=",", quotechar='"')
                     writer.writerow(WRITING_DICT)
-                    for v in file_dict.values():
-                        writer.writerow(
-                            [
-                                v["id"],
-                                api_dict["address"]["addressLines"],
-                                "",
-                                "",
-                                "",
-                                "",
-                            ]
-                        )
+                    for o_l in output_list:
+                        writer.writerow(o_l)
 
 
 if __name__ == "__main__":
