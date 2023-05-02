@@ -33,13 +33,22 @@ def main():
             file_dicts = read_csv_to_dict(f)
             for file_row in file_dicts:
                 if file_row["address"] and file_row["zipcode"]:
+                    if not file_row.get("city"):
+                        file_row["city"] = "Chicago"
+
+                    if not file_row.get("state"):
+                        file_row["state"] = "IL"
+
+                    if not file_row.get("country"):
+                        file_row["country"] = "US"
+
                     api_dict = {
-                        "regionCode": "US",
+                        "regionCode": file_row["country"],
                         "addressLines": [
                             f"{float(file_row['address_number']):.0f} "
                             f"{file_row['address'].strip()}",
-                            "Chicago",
-                            "IL",
+                            file_row["city"],
+                            file_row["state"],
                             file_row["zipcode"].strip(),
                         ],
                     }
