@@ -1,9 +1,6 @@
 ## What does this pull request add?
 
 
-## Are there any technical things that should be noted for this PR?
-
-
 ## How was it tested?
 - [ ] Manually tested code.
 

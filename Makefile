@@ -8,7 +8,7 @@ format:
 
 .PHONY: lint
 lint:
-	pylint test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
+	ruff test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
 
 .PHONY: test
 test:
