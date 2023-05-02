@@ -11,10 +11,6 @@ def get_client():
 
     :return: censusgeocode.client
     """
-    key = os.getenv("CENSUS_API_KEY")
-
-    # Make sure there is an API key.
-    assert key != ""
 
     return CensusGeocode()
 
