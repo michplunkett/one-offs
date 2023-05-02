@@ -3,6 +3,8 @@ from time import sleep
 import requests
 from censusgeocode import CensusGeocode
 
+from util.constants import SLEEP_TIME_ERROR
+
 CLIENT = None
 
 
@@ -34,7 +36,6 @@ def validate_address(client, info):
     assert len(info) == 4
 
     num_retries = 10
-    pause_duration_seconds = 0.5
     response = None
     for _ in range(num_retries):
         try:
@@ -50,10 +51,10 @@ def validate_address(client, info):
                 break
         except requests.exceptions.RequestException:
             print(
-                f"Pausing {pause_duration_seconds} between Census Geocode "
+                f"Pausing {SLEEP_TIME_ERROR} between Census Geocode "
                 f"requests due to error."
             )
-            sleep(pause_duration_seconds)
+            sleep(SLEEP_TIME_ERROR)
             pass
 
     return response

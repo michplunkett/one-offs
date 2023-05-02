@@ -21,6 +21,9 @@ EXTENSION_JPEG = "." + FILE_TYPES_JPEG
 EXTENSION_PDF = "." + FILE_TYPES_PDF
 EXTENSION_TXT = "." + FILE_TYPES_TXT
 
+# API constants
+SLEEP_TIME_ERROR = 1
+
 # ISO 639-1 language codes
 ISO_LANGUAGES = [
     "aa",
