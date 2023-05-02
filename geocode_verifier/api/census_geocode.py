@@ -1,12 +1,31 @@
-import censusgeocode as cg
+import os
+
+from censusgeocode import CensusGeocode
+
+CLIENT = None
 
 
-def validate_address(info):
+def get_client():
+    """
+    Gets the Census Geocode API client.
+
+    :return: censusgeocode.client
+    """
+    key = os.getenv("CENSUS_API_KEY")
+
+    # Make sure there is an API key.
+    assert key != ""
+
+    return CensusGeocode()
+
+
+def validate_address(client, info):
     """
     Takes address information and returns validation on that address from the
     Census Geocode API. For documentation, please check this link:
     https://github.com/fitnr/censusgeocode#census-geocode
 
+    :param client: the Census Geocode API client
     :param dictionary info: A nested dictionary of strings containing
         information about a particular address
 
@@ -17,7 +36,7 @@ def validate_address(info):
     # Make sure the fields are there.
     assert len(info) == 4
 
-    return cg.address(
+    return client.address(
         street=info[0],
         city=info[1],
         state=info[2],

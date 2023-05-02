@@ -3,7 +3,7 @@ import os
 import googlemaps
 
 
-def _get_client():
+def get_client():
     """
     Gets the GoogleMaps API client.
 
@@ -17,12 +17,13 @@ def _get_client():
     return googlemaps.Client(key)
 
 
-def validate_address(info):
+def validate_address(client, info):
     """
     Takes address information and returns validation on that address from the
     Google Maps API. For documentation, please check this link:
     https://developers.google.com/maps/documentation/address-validation/requests-validate-address
 
+    :param client: the GoogleMaps API client
     :param dictionary info: A nested dictionary of strings containing
         information about a particular address
 
@@ -30,14 +31,15 @@ def validate_address(info):
     :rtype googlemaps.ValidationResult
     """
 
-    client = _get_client()
-
     # Assert that the necessary fields are there.
-    assert bool(info["address"])
-    assert bool(info["address"]["regionCode"])
-    assert bool(info["address"]["addressLines"])
+    assert bool(info)
+    assert bool(info["regionCode"])
+    assert bool(info["addressLines"])
 
-    # Enable Coding Accuracy Support System
-    info["enableUspsCass"] = True
-
-    return client.addressvalidation()
+    return client.addressvalidation(
+        info["addressLines"],
+        # Enable Coding Accuracy Support System
+        enableUspsCass=True,
+        locality="Chicago",
+        regionCode=info["regionCode"],
+    )
