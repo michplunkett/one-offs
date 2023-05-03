@@ -32,18 +32,19 @@ def main():
         if os.path.isfile(f) and f.endswith(EXTENSION_CSV):
             file_dicts = read_csv_to_dict(f)
             for file_row in file_dicts:
+                # If the row does not at least have a street and zipcode,
+                # it is ignored.
                 if file_row["address"] and file_row["zipcode"]:
+                    # The city is defaulted to Chicago if it is not present.
                     if not file_row.get("city"):
                         file_row["city"] = "Chicago"
 
+                    # The state is defaulted to IL if it is not present.
                     if not file_row.get("state"):
                         file_row["state"] = "IL"
 
-                    if not file_row.get("country"):
-                        file_row["country"] = "US"
-
                     api_dict = {
-                        "regionCode": file_row["country"],
+                        "regionCode": "US",
                         "addressLines": [
                             f"{float(file_row['address_number']):.0f} "
                             f"{file_row['address'].strip()}",
@@ -74,6 +75,8 @@ def main():
                                 "ROUTE",
                             ].index(gm_result["verdict"]["geocodeGranularity"])
                             > -1,
+                            # As long as one result shows up, we count it as
+                            # confirmed.
                             len(cg_result) > 0,
                         ]
                     )

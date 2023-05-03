@@ -32,7 +32,7 @@ def validate_address(client, info):
     :rtype googlemaps.ValidationResult
     """
 
-    # Make sure the fields are there.
+    # Make sure the necessary fields are there.
     assert len(info) == 4
 
     num_retries = 10
