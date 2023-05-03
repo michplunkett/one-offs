@@ -5,7 +5,7 @@
 
 # Project-specific ignores
 google_translate_pdfs/data
-invisible_institute/data
+geocode_verifier/data
 pdf_parser/data
 
 # Byte-compiled / optimized / DLL files

@@ -3,12 +3,12 @@
 
 .PHONY: format
 format:
-	isort test/ pdf_parser/ google_translate_pdfs/ util/
-	black test/ pdf_parser/ google_translate_pdfs/ util/
+	isort test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
+	black test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
 
 .PHONY: lint
 lint:
-	ruff test/ pdf_parser/ google_translate_pdfs/ util/
+	ruff test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
 
 .PHONY: test
 test:
@@ -26,3 +26,7 @@ translate:
 .PHONY: parse-pdf
 parse-pdf:
 	python -m pdf_parser
+
+.PHONY: verify-geocodes
+verify-geocodes:
+	python -m geocode_verifier

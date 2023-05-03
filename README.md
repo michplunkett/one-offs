@@ -27,7 +27,29 @@ The `pdf_parser` package translates all PDFs in the `pdf_parser/data/input` fold
 To run it, run this command: `make parse-pdf`
 
 ### Steps to run
-1. Put the pdf files you want parsed in the `pdf_parser/data/input` folder.
+1. Put the PDF files you want parsed in the `pdf_parser/data/input` folder.
    - The `pdf_parser/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
 2. Run the `make parse-pdf` command from the base folder of the repository and your output files will be in the `pdf_parser/data/output` folder.
 
+
+## Use the Geocode Verifier to verify the addresses in your CSVs
+The `geocode_verifier` package confirms the addresses of rows in all CSVs in the `geocode_verifier/data/input` folder.\
+To run it, run this command: `make verify-geocodes`
+
+### Steps to run
+1. Set up your GCloud authentication via this set of instructions: [Link](https://codelabs.developers.google.com/codelabs/cloud-translation-python3#0)
+   - Run the `gcloud auth application-default login` command to save the credentials for your project to your computer.
+2. Put the CSV files you want parsed in the `geocode_verifier/data/input` folder.
+   - The `geocode_verifier/data` folder is in the `.gitignore` file, so you don't have to worry about any files being potentially leaked into the repository.
+3. Run the `make verify-geocodes` command from the base folder of the repository and your output files will be in the `geocode_verifier/data/output` folder.
+
+### Needed headers and more general things
+
+|  id  | address_number | address | city | zipcode | state |
+| :--: | :------------: | :-----: | :--: | :-----: | :---: |
+| external unique ID | address number | street and apartment information | city name | zip code | two-character state abbreviation |
+| string or int | float or int | string | string | string | string |
+
+- `city` will be defaulted to `Chicago` if the key is not present.
+- `state` will be defaulted to `IL` if the key is not present.
+- All addresses are presumed to be in the United States.

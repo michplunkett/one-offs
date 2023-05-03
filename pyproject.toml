@@ -5,7 +5,6 @@ description = "This repository will house any one-off side projects I create on 
 authors = ["michplunkett <michplunkett@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "one_offs"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -15,14 +14,20 @@ pillow = "^9.5.0"
 pytesseract = "^0.3.10"
 pdf2image = "^1.16.3"
 isort = "^5.12.0"
+googlemaps = "^4.10.0"
+us = "^2.0.2"
+censusgeocode = "^0.5.2"
 ruff = "^0.0.263"
 
 [tool.black]
+extend-exclude='''.data\/'''
 line-length = 80
 
 [tool.isort]
 profile= "black"
 line_length = 80
+skip = [".gitignore"]
+skip_glob = ["**data/*"]
 
 [tool.ruff]
 fix=true
