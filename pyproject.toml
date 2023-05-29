@@ -20,6 +20,7 @@ censusgeocode = "^0.5.2"
 ruff = "^0.0.267"
 polars = "^0.18.0"
 jupyter = "^1.0.0"
+jupyter-black = "^0.3.4"
 
 [tool.black]
 extend-exclude='''.data\/'''
