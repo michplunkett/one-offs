@@ -2,6 +2,8 @@
 .idea
 .vscode
 **/.DS_Store
+scratch_notebook.ipynb
+scratch/
 
 # Project-specific ignores
 google_translate_pdfs/data
