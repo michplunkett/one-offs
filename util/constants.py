@@ -7,6 +7,7 @@ ENCODING_STANDARD = "utf-8"
 STANDARD_DPI = 720
 
 # File open
+FILE_OPEN_READ = "r"
 FILE_OPEN_WRITE = "w"
 
 # File types
