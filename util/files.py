@@ -2,8 +2,9 @@
 This file is a general file utility.
 """
 import csv
+import json
 
-from util.constants import ENCODING_STANDARD
+from util.constants import ENCODING_STANDARD, FILE_OPEN_READ, FILE_OPEN_WRITE
 
 
 def read_csv_to_dict(file_path):
@@ -17,9 +18,23 @@ def read_csv_to_dict(file_path):
     """
     rows = []
 
-    with open(file_path, newline="", encoding=ENCODING_STANDARD) as csvfile:
+    with open(
+        file_path, newline="", mode=FILE_OPEN_READ, encoding=ENCODING_STANDARD
+    ) as csvfile:
         reader = csv.DictReader(csvfile)
         for r in reader:
             rows.append(r)
 
     return rows
+
+
+def write_to_json(file_path, json_dict):
+    """
+    This function writes a dictionary to a JSON file.
+
+    :param str file_path: The path of the desired file.
+    :param dict json_dict: A dictionary meant to be written as JSON.
+    """
+
+    with open(file_path, mode=FILE_OPEN_WRITE) as outfile:
+        json.dump(json_dict, outfile, indent=4)
