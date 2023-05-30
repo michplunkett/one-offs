@@ -19,9 +19,9 @@ def read_csv_to_dict(file_path):
     rows = []
 
     with open(
-        file_path, newline="", mode=FILE_OPEN_READ, encoding=ENCODING_STANDARD
-    ) as csvfile:
-        reader = csv.DictReader(csvfile)
+        file_path, encoding=ENCODING_STANDARD, mode=FILE_OPEN_READ, newline=""
+    ) as csv_file:
+        reader = csv.DictReader(csv_file)
         for r in reader:
             rows.append(r)
 
@@ -36,5 +36,7 @@ def write_to_json(file_path, json_dict):
     :param dict json_dict: A dictionary meant to be written as JSON.
     """
 
-    with open(file_path, mode=FILE_OPEN_WRITE) as outfile:
-        json.dump(json_dict, outfile, indent=4)
+    with open(
+        file_path, encoding=ENCODING_STANDARD, mode=FILE_OPEN_WRITE
+    ) as out_file:
+        json.dump(json_dict, out_file, indent=4)
