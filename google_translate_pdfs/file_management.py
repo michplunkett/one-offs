@@ -6,7 +6,11 @@ Translate API inputs and outputs.
 import csv
 import os
 
-from util.constants import ENCODING_STANDARD, EXTENSION_CSV, FILE_OPEN_WRITE
+from util.constants import (
+    ENCODING_STANDARD,
+    EXTENSION_CSV,
+    FILE_OPEN_MODE_WRITE,
+)
 
 BASE_DIR = os.getcwd()
 FOLDER_OUTPUT = BASE_DIR + "/google_translate_pdfs/data/output/"
@@ -16,7 +20,7 @@ def write_translation_to_csv(original_file_name, orig_text, trans_text):
     name, _ = os.path.splitext(original_file_name)
     with open(
         FOLDER_OUTPUT + name + EXTENSION_CSV,
-        FILE_OPEN_WRITE,
+        FILE_OPEN_MODE_WRITE,
         encoding=ENCODING_STANDARD,
     ) as csv_file:
         writer = csv.writer(csv_file, delimiter="\t", quotechar='"')

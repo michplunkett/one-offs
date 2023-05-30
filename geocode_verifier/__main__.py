@@ -3,7 +3,11 @@ import os
 
 import geocode_verifier.api.census_geocode as cg
 import geocode_verifier.api.google_maps as gm
-from util.constants import ENCODING_STANDARD, EXTENSION_CSV, FILE_OPEN_WRITE
+from util.constants import (
+    ENCODING_STANDARD,
+    EXTENSION_CSV,
+    FILE_OPEN_MODE_WRITE,
+)
 from util.files import read_csv_to_dict
 
 WRITING_DICT = [
@@ -95,7 +99,7 @@ def main():
             with open(
                 write_directory
                 + file_name.replace(EXTENSION_CSV, ".output" + EXTENSION_CSV),
-                FILE_OPEN_WRITE,
+                FILE_OPEN_MODE_WRITE,
                 encoding=ENCODING_STANDARD,
             ) as csv_file:
                 writer = csv.writer(

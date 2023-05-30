@@ -7,8 +7,8 @@ ENCODING_STANDARD = "utf-8"
 STANDARD_DPI = 720
 
 # File open
-FILE_OPEN_READ = "r"
-FILE_OPEN_WRITE = "w"
+FILE_OPEN_MODE_READ = "r"
+FILE_OPEN_MODE_WRITE = "w"
 
 # File types
 FILE_TYPES_CSV = "csv"
