@@ -2,13 +2,12 @@
 .idea
 .vscode
 **/.DS_Store
-scratch_notebook.ipynb
-scratch/
 
 # Project-specific ignores
 google_translate_pdfs/data
 geocode_verifier/data
 pdf_parser/data
+scratch/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
