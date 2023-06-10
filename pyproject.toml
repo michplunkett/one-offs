@@ -21,6 +21,7 @@ ruff = "^0.0.270"
 polars = "^0.18.0"
 jupyter = "^1.0.0"
 jupyter-black = "^0.3.4"
+nbqa = "^1.7.0"
 
 [tool.black]
 extend-exclude='''.data\/'''
