@@ -5,8 +5,6 @@ from censusgeocode import CensusGeocode
 
 from util.constants import SLEEP_TIME_ERROR
 
-CLIENT = None
-
 
 def get_client():
     """
