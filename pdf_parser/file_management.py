@@ -1,3 +1,4 @@
+"""Contains functions for writing .pdf output."""
 import os
 
 from util.constants import (
@@ -10,6 +11,7 @@ FOLDER_OUTPUT = os.getcwd() + "/pdf_parser/data/output/"
 
 
 def write_file_text_to_txt(original_file_name, text):
+    """Write file text to a .txt file."""
     name, _ = os.path.splitext(original_file_name)
     with open(
         FOLDER_OUTPUT + name + EXTENSION_TXT,
