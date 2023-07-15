@@ -1,3 +1,4 @@
+"""Run the Geocode verification process for the files in the input directory."""
 import csv
 import os
 
@@ -21,6 +22,7 @@ WRITING_DICT = [
 
 
 def main():
+    """Run the Geocode verification process."""
     read_directory = os.getcwd() + "/geocode_verifier/data/input/"
     write_directory = os.getcwd() + "/geocode_verifier/data/output/"
 
