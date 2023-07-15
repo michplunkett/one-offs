@@ -1,4 +1,4 @@
-"""This file houses the Google Translate API logic."""
+"""Contains the Google Translate API logic."""
 
 import six
 from google.cloud import translate_v2 as translate
@@ -9,17 +9,7 @@ KEY_TRANSLATED_TEXT = "translatedText"
 
 
 def gcloud_translate(src_lang, target_lang, text):
-    """
-    Gets the Google Translate API client.
-    Inputs:
-        src_lang (string): an ISO 639-1 language code
-        target_language (string): an ISO 639-1 language code
-        text (list of strings): the string that is to be translated.
-
-    Returns
-    -------
-        The translated text.
-    """
+    """Get the Google Translate API client."""
     translate_client = translate.Client()
 
     if isinstance(text, six.binary_type):
