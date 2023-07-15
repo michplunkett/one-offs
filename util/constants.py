@@ -1,4 +1,4 @@
-"""This file contains any constants that may be used in more than one package."""
+"""Contains any constants that may be used in more than one package."""
 
 # Misc.
 ENCODING_STANDARD = "utf-8"
