@@ -1,7 +1,4 @@
-"""
-This file houses the file accessing and writing functions for the Google
-Translate API inputs and outputs.
-"""
+"""File accessing and writing functions for the Google Translate API inputs and outputs."""
 
 import csv
 import os
@@ -17,6 +14,7 @@ FOLDER_OUTPUT = BASE_DIR + "/google_translate_pdfs/data/output/"
 
 
 def write_translation_to_csv(original_file_name, orig_text, trans_text):
+    """Write translations to a .csv file."""
     name, _ = os.path.splitext(original_file_name)
     with open(
         FOLDER_OUTPUT + name + EXTENSION_CSV,
