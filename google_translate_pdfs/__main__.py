@@ -13,7 +13,7 @@ FOLDER_INPUT = os.getcwd() + "/google_translate_pdfs/data/input/"
 
 
 def main():
-    """The process runner for the translation process.
+    """Run the translation process.
 
     For a list of ISO 639-1, go here:
     https://www.loc.gov/standards/iso639-2/php/code_list.php
