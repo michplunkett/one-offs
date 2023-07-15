@@ -9,6 +9,7 @@ format:
 .PHONY: lint
 lint:
 	ruff test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
+	nbqa ruff **/*.ipynb --extend-ignore=D100,D103
 
 .PHONY: test
 test:
