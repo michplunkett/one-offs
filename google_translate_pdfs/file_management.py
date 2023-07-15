@@ -1,4 +1,4 @@
-"""File accessing and writing functions for the Google Translate API inputs and outputs."""
+"""Contains file accessing and writing functions for the Google Translate API."""
 
 import csv
 import os
