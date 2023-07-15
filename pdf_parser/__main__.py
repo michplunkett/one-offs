@@ -1,7 +1,4 @@
-"""
-This file runs pulls the text from the set of PDFs housed in the
-./data/input folder.
-"""
+"""Pulls the text from the set of PDFs housed in the ./data/input folder."""
 import os
 
 from pdf_parser.file_management import write_file_text_to_txt
@@ -11,6 +8,7 @@ FOLDER_INPUT = os.getcwd() + "/google_translate_pdfs/data/input/"
 
 
 def main():
+    """Parse all .pdf files from the `FOLDER_INPUT` directory."""
     pdf_files = get_files(FOLDER_INPUT)
     for file in pdf_files:
         print(f"Getting text from {file}.")

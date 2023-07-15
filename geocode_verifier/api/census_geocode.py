@@ -1,3 +1,4 @@
+"""Census Geocode functions."""
 from time import sleep
 
 import requests
@@ -7,29 +8,15 @@ from util.constants import SLEEP_TIME_ERROR
 
 
 def get_client():
-    """
-    Gets the Census Geocode API client.
-
-    :return: censusgeocode.client
-    """
-
+    """Get the Census Geocode API client."""
     return CensusGeocode()
 
 
 def validate_address(client, info):
+    """Take address information and return validation information on the submitted address from the Census Geocode API.
+
+    For documentation, check this link: https://github.com/fitnr/censusgeocode#census-geocode.
     """
-    Takes address information and returns validation on that address from the
-    Census Geocode API. For documentation, please check this link:
-    https://github.com/fitnr/censusgeocode#census-geocode
-
-    :param client: the Census Geocode API client
-    :param dictionary info: A nested dictionary of strings containing
-        information about a particular address
-
-    :returns The ValidationResult for the query.
-    :rtype googlemaps.ValidationResult
-    """
-
     # Make sure the necessary fields are there.
     assert len(info) == 4
 

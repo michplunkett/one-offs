@@ -1,7 +1,4 @@
-"""
-This file runs the translation process for the set of PDFs housed in the
-./data/input folder.
-"""
+"""Run the translation process for the set of PDFs housed in the ./data/input folder."""
 
 import argparse
 import os
@@ -16,13 +13,11 @@ FOLDER_INPUT = os.getcwd() + "/google_translate_pdfs/data/input/"
 
 
 def main():
-    """
-    The process runner for the translation process.
+    """Run the translation process.
 
     For a list of ISO 639-1, go here:
     https://www.loc.gov/standards/iso639-2/php/code_list.php
     """
-
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
