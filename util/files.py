@@ -1,4 +1,4 @@
-"""This file is a general file utility."""
+"""General file utility functions."""
 import csv
 import json
 
@@ -10,14 +10,7 @@ from util.constants import (
 
 
 def read_csv_to_dict(file_path):
-    """
-    This function reads in a CSV file path and then returns a dictionary of its
-    respective keys and values.
-
-    :param str file_path: This is the file path of the CSV file.
-    :return: A key and value store of the CSV.
-    :rtype Dictionary
-    """
+    """Reads in a CSV file path and then return a dictionary of its respective keys and values."""
     rows = []
 
     with open(
@@ -34,12 +27,7 @@ def read_csv_to_dict(file_path):
 
 
 def write_to_json(file_path, json_dict):
-    """
-    This function writes a dictionary to a JSON file.
-
-    :param str file_path: The path of the desired file.
-    :param dict json_dict: A dictionary meant to be written as JSON.
-    """
+    """Write a dictionary to a JSON file."""
     with open(
         file_path, encoding=ENCODING_STANDARD, mode=FILE_OPEN_MODE_WRITE
     ) as out_file:
