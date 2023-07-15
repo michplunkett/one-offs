@@ -22,7 +22,6 @@ def main():
     For a list of ISO 639-1, go here:
     https://www.loc.gov/standards/iso639-2/php/code_list.php
     """
-
     parser = argparse.ArgumentParser()
 
     parser.add_argument(

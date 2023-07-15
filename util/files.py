@@ -1,6 +1,4 @@
-"""
-This file is a general file utility.
-"""
+"""This file is a general file utility."""
 import csv
 import json
 
@@ -42,7 +40,6 @@ def write_to_json(file_path, json_dict):
     :param str file_path: The path of the desired file.
     :param dict json_dict: A dictionary meant to be written as JSON.
     """
-
     with open(
         file_path, encoding=ENCODING_STANDARD, mode=FILE_OPEN_MODE_WRITE
     ) as out_file:

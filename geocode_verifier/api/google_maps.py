@@ -21,7 +21,7 @@ def validate_address(client, info):
     """
     Takes address information and returns validation on that address from the
     Google Maps API. For documentation, please check this link:
-    https://developers.google.com/maps/documentation/address-validation/requests-validate-address
+    https://developers.google.com/maps/documentation/address-validation/requests-validate-address.
 
     :param client: the GoogleMaps API client
     :param dictionary info: A nested dictionary of strings containing
@@ -30,7 +30,6 @@ def validate_address(client, info):
     :returns The ValidationResult for the query.
     :rtype googlemaps.ValidationResult
     """
-
     # Assert that the necessary fields are there.
     assert bool(info)
     assert bool(info["regionCode"])

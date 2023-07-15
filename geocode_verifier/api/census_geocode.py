@@ -12,7 +12,6 @@ def get_client():
 
     :return: censusgeocode.client
     """
-
     return CensusGeocode()
 
 
@@ -20,7 +19,7 @@ def validate_address(client, info):
     """
     Takes address information and returns validation on that address from the
     Census Geocode API. For documentation, please check this link:
-    https://github.com/fitnr/censusgeocode#census-geocode
+    https://github.com/fitnr/censusgeocode#census-geocode.
 
     :param client: the Census Geocode API client
     :param dictionary info: A nested dictionary of strings containing
@@ -29,7 +28,6 @@ def validate_address(client, info):
     :returns The ValidationResult for the query.
     :rtype googlemaps.ValidationResult
     """
-
     # Make sure the necessary fields are there.
     assert len(info) == 4
 

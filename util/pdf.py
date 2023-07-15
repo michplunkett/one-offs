@@ -1,6 +1,4 @@
-"""
-This files contains PDF-oriented utilitiy functions.
-"""
+"""This files contains PDF-oriented utilitiy functions."""
 import os
 from tempfile import TemporaryDirectory
 
