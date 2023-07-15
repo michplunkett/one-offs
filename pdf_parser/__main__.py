@@ -8,7 +8,7 @@ FOLDER_INPUT = os.getcwd() + "/google_translate_pdfs/data/input/"
 
 
 def main():
-    """Translate all .pdf files to the specified language."""
+    """Parse all .pdf files from the `FOLDER_INPUT` directory."""
     pdf_files = get_files(FOLDER_INPUT)
     for file in pdf_files:
         print(f"Getting text from {file}.")
