@@ -1,4 +1,4 @@
-"""This files contains PDF-oriented utilitiy functions."""
+"""Contains PDF-oriented utility functions."""
 import os
 from tempfile import TemporaryDirectory
 
@@ -14,7 +14,8 @@ from util.constants import (
 )
 
 
-def get_files(input_folder):
+def get_files(input_folder: str):
+    """Get file names from the specified directory."""
     file_names = []
     for f in os.listdir(input_folder):
         _, ext = os.path.splitext(f)
@@ -24,7 +25,8 @@ def get_files(input_folder):
     return file_names
 
 
-def get_file_text(file_name, input_folder):
+def get_file_text(file_name: str, input_folder: str):
+    """Get the text stored in the specified file."""
     file_text = []
     image_file_list = []
 
