@@ -8,20 +8,21 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-black = "^23.7.0"
 google-cloud-translate = "2.0.1"
 pillow = "^9.5.0"
 pytesseract = "^0.3.10"
 pdf2image = "^1.16.3"
-isort = "^5.12.0"
 googlemaps = "^4.10.0"
 us = "^2.0.2"
 censusgeocode = "^0.5.2"
-ruff = "^0.0.281"
 polars = "^0.18.0"
-jupyter = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+isort = "^5.12.0"
+ruff = "^0.0.281"
 jupyter-black = "^0.3.4"
-nbqa = "^1.7.0"
+jupyter = "^1.0.0"
 
 [tool.black]
 extend-exclude='''.data\/'''
