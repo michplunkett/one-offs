@@ -7,7 +7,7 @@
 google_translate_pdfs/data
 geocode_verifier/data
 pdf_parser/data
-scratch/
+notebooks/data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

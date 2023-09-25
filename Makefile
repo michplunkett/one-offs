@@ -3,17 +3,9 @@
 
 .PHONY: lint
 lint:
-	isort test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
-	black test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/ **/*.ipynb
-	ruff test/ pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
-
-.PHONY: test
-test:
-	pytest -vs test/
-
-.PHONY: test-and-fail
-test-and-fail:
-	pytest -vsx test/
+	isort pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
+	black pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/ **/*.ipynb
+	ruff pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
 
 # One-off run commands
 .PHONY: translate
