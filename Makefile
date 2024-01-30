@@ -1,11 +1,8 @@
-# Here is some general information on Makefile's so that you can grow this out:
-# https://www.gnu.org/software/make/manual/html_node/Introduction.html
+default: lint
 
 .PHONY: lint
 lint:
-	isort pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
-	black pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/ **/*.ipynb
-	ruff pdf_parser/ google_translate_pdfs/ geocode_verifier/ util/
+	pre-commit run --all-files
 
 # One-off run commands
 .PHONY: translate

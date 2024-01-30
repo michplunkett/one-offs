@@ -13,9 +13,12 @@ def get_client():
 
 
 def validate_address(client, info):
-    """Take address information and return validation information on the submitted address from the Census Geocode API.
+    """
+    Take address information and return validation information on the submitted
+    address from the Census Geocode API.
 
-    For documentation, check this link: https://github.com/fitnr/censusgeocode#census-geocode.
+    For documentation, check this link:
+    https://github.com/fitnr/censusgeocode#census-geocode.
     """
     # Make sure the necessary fields are there.
     assert len(info) == 4

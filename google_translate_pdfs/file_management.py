@@ -1,4 +1,6 @@
-"""Contains file accessing and writing functions for the Google Translate API."""
+"""
+Contains file accessing and writing functions for the Google Translate API.
+"""
 
 import csv
 import os
@@ -8,6 +10,7 @@ from util.constants import (
     EXTENSION_CSV,
     FILE_OPEN_MODE_WRITE,
 )
+
 
 BASE_DIR = os.getcwd()
 FOLDER_OUTPUT = BASE_DIR + "/google_translate_pdfs/data/output/"
