@@ -4,6 +4,7 @@ import os
 from pdf_parser.file_management import write_file_text_to_txt
 from util.pdf import get_file_text, get_files
 
+
 FOLDER_INPUT = os.getcwd() + "/google_translate_pdfs/data/input/"
 
 

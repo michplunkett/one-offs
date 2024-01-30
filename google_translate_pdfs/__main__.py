@@ -1,4 +1,7 @@
-"""Run the translation process for the set of PDFs housed in the ./data/input folder."""
+"""
+Run the translation process for the set of PDFs housed in the ./data/input
+folder.
+"""
 
 import argparse
 import os
@@ -8,6 +11,7 @@ from google_translate_pdfs.file_management import write_translation_to_csv
 from google_translate_pdfs.translation import gcloud_translate
 from util.constants import ISO_LANGUAGES
 from util.pdf import get_file_text, get_files
+
 
 FOLDER_INPUT = os.getcwd() + "/google_translate_pdfs/data/input/"
 

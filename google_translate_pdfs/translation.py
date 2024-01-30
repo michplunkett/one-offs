@@ -5,6 +5,7 @@ from google.cloud import translate_v2 as translate
 
 from util.constants import ENCODING_STANDARD
 
+
 KEY_TRANSLATED_TEXT = "translatedText"
 
 

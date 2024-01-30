@@ -10,7 +10,10 @@ from util.constants import (
 
 
 def read_csv_to_dict(file_path):
-    """Read in a CSV file path and then return a dictionary of its respective keys and values."""
+    """
+    Read in a CSV file path and then return a dictionary of its respective keys
+    and values.
+    """
     rows = []
 
     with open(

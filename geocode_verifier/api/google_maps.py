@@ -16,7 +16,8 @@ def get_client():
 
 def validate_address(client, info):
     """
-    Take address information and returns validation on that address from the Google Maps API.
+    Take address information and returns validation on that address from the
+    Google Maps API.
 
     For documentation, please check this link:
     https://developers.google.com/maps/documentation/address-validation/requests-validate-address.

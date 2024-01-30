@@ -11,6 +11,7 @@ from util.constants import (
 )
 from util.files import read_csv_to_dict
 
+
 WRITING_DICT = [
     "id",
     "original_address",

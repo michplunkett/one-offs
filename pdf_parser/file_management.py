@@ -7,6 +7,7 @@ from util.constants import (
     FILE_OPEN_MODE_WRITE,
 )
 
+
 FOLDER_OUTPUT = os.getcwd() + "/pdf_parser/data/output/"
 
 
