@@ -9,11 +9,11 @@ def list_to_parsed_set(unparsed_list: [str], delimiter: str = "/"):
     for element in unparsed_list:
         if delimiter in element:
             for p in element.split(delimiter):
-                fmt_element = p.strip().lower()
+                fmt_element = p.strip()
                 if p:
                     parsed_set.add(fmt_element)
         else:
-            fmt_element = element.strip().lower()
+            fmt_element = element.strip()
             parsed_set.add(fmt_element)
 
     # Remove any empty values from set
