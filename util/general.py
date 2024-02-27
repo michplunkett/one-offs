@@ -2,6 +2,7 @@
 Stores non-specific domain functions that are used in multiple files.
 """
 
+
 def list_to_parsed_set(unparsed_list: [str], delimiter: str = "/"):
     unparsed_list.sort()
     parsed_set = set()
