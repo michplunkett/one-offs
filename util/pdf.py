@@ -1,4 +1,5 @@
 """Contains PDF-oriented utility functions."""
+
 import os
 from tempfile import TemporaryDirectory
 

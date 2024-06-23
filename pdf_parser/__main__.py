@@ -1,4 +1,5 @@
 """Pulls the text from the set of PDFs housed in the ./data/input folder."""
+
 import os
 
 from pdf_parser.file_management import write_file_text_to_txt

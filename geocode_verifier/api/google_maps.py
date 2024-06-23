@@ -1,4 +1,5 @@
 """Contains the GoogleMaps API functions."""
+
 import os
 
 import googlemaps
