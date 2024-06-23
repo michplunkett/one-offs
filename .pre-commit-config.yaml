@@ -2,8 +2,17 @@ repos:
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.7.1
     hooks:
+      - id: nbqa-ruff
+        exclude: data/
+        args:
+          - --fix
+          - --target-version=py311
+          - --ignore=E721,E722
+          - --line-length=80
       - id: nbqa-isort
         exclude: data/
+        args:
+          - --float-to-top
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -25,9 +34,6 @@ repos:
       - id: fix-encoding-pragma
         args:
           - --remove
-      - id: pretty-format-json
-        args:
-          - --autofix
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
@@ -63,7 +69,7 @@ repos:
           - --line-length=80
       - id: ruff-format
         exclude: data/
-        types_or: [python,pyi,jupyter]
+        types_or: [python,pyi]
         args:
           - --target-version=py311
           - --line-length=80
