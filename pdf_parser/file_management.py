@@ -1,4 +1,5 @@
 """Contains functions for writing .pdf output."""
+
 import os
 
 from util.constants import (
