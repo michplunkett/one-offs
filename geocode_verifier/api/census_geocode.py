@@ -1,4 +1,5 @@
 """Census Geocode functions."""
+
 from time import sleep
 
 import requests
