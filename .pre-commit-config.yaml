@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.7.1
+    rev: 1.8.5
     hooks:
       - id: nbqa-ruff
         exclude: data/
@@ -8,6 +8,10 @@ repos:
           - --fix
           - --target-version=py311
           - --ignore=E721,E722
+          - --line-length=80
+      - id: nbqa-black
+        exclude: data/
+        args:
           - --line-length=80
       - id: nbqa-isort
         exclude: data/
@@ -34,6 +38,9 @@ repos:
       - id: fix-encoding-pragma
         args:
           - --remove
+      - id: pretty-format-json
+        args:
+          - --autofix
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
