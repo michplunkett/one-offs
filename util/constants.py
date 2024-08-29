@@ -641,6 +641,7 @@ INCIDENT_CATS_VIOLENCE = [
     "Unlawful Discharge of a Weapon",
     "Unlawful Use of Firearm",
     "Unlawful Use of Weapon",
+    "Unlawful Use of a Firearm",
     "Unlawful Use of a Weapon Arrest",
     "Unlawful Use of a Weapon",
     "Vehicle Hijacking",
