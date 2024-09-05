@@ -304,6 +304,7 @@ INCIDENT_CATS_MISC = [
     "Financial Identity Theft",
     "Fire Alarm",
     "Fire",
+    "Fleeing Police",
     "Fleeing or Attempting to Elude Police",
     "Fleeing",
     "Foreign Steal",
