@@ -4,10 +4,8 @@
 **/.DS_Store
 
 # Project-specific ignores
-google_translate_pdfs/data
-geocode_verifier/data
-pdf_parser/data
-notebooks/data
+*/data
+notebooks/*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
