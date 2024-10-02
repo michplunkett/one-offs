@@ -6,7 +6,7 @@
 # Project-specific ignores
 */data
 notebooks/*.png
-!*/data/IDOC*.pdf
+!**IDOC*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
