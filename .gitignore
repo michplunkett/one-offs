@@ -4,9 +4,14 @@
 **/.DS_Store
 
 # Project-specific ignores
-*/data
+google_translate_pdfs/data
+geocode_verifier/data
+pdf_parser/data
 notebooks/*.png
-!notebooks/data/*.pdf
+notebooks/data/*.csv
+notebooks/data/*.geojson
+notebooks/data/chi_street_lines/
+notebooks/data/chicago_comm_utm/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
