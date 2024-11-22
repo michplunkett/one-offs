@@ -237,6 +237,7 @@ INCIDENT_CATS_MISC = [
     "Accidental Injury",
     "Accidental Shooting",
     "Accidental",
+    "Aggravated Fleeing Police",
     "Alarm",
     "Ambulance Request",
     "Animal Bite",
