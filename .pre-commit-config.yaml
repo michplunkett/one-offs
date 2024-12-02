@@ -1,9 +1,23 @@
 repos:
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.7.1
+    rev: 1.8.5
     hooks:
+      - id: nbqa-ruff
+        exclude: data/
+        args:
+          - --fix
+          - --target-version=py311
+          - --ignore=E721,E722
+          - --line-length=80
+      - id: nbqa-black
+        exclude: data/
+        args:
+          - --line-length=80
       - id: nbqa-isort
         exclude: data/
+        args:
+          - --profile=black
+          - --float-to-top
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -26,6 +40,7 @@ repos:
         args:
           - --remove
       - id: pretty-format-json
+        exclude_types: [jupyter]
         args:
           - --autofix
 
@@ -50,7 +65,7 @@ repos:
           - --line-length=80
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.4.10
+    rev: v0.8.1
     hooks:
       - id: ruff
         types_or: [python,pyi]
@@ -63,7 +78,7 @@ repos:
           - --line-length=80
       - id: ruff-format
         exclude: data/
-        types_or: [python,pyi,jupyter]
+        types_or: [python,pyi]
         args:
           - --target-version=py311
           - --line-length=80
