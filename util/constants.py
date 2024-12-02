@@ -249,6 +249,7 @@ INCIDENT_CATS_MISC = [
     "Assist Other Agency Motor Vehicle Theft and Recovery",
     "Assist Other Agency",
     "Attempt",
+    "Attempted Suicide",
     "Attempted",
     "Automobile",
     "Bomb Threat",
