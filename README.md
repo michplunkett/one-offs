@@ -6,8 +6,8 @@ This repository will house any one-off side projects I create on behalf of other
 1. Install [`tesseract`](https://github.com/tesseract-ocr/tesseract).
    - To install `tesseract` on a Mac, you can run the following command: `brew install tesseract`
    - To install `tesseract` on any other operating systems, please reference [this document.](https://tesseract-ocr.github.io/tessdoc/Installation.html)
-2. Install the [Poetry](https://github.com/python-poetry/poetry) virtual environment container at the base directory for this repository.
-3. Run the `poetry init` command from the base folder of this repository.
+2. Install the [uv](https://docs.astral.sh/uv/) virtual environment container at the base directory for this repository.
+3. Run the `uv venv` or `make env` command from the base folder of this repository.
 
 ## Use the Google Translate API to translate a set of PDFs
 The `google_translate_pdfs` package translates all PDFs in the `google_translate_pdfs/data/input` folder.\
