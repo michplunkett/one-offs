@@ -4,19 +4,23 @@ default: lint
 env:
 	uv venv
 
+.PHONY: install
+install:
+	uv pip install -r pyproject.toml
+
 .PHONY: lint
 lint:
-	uv run pre-commit run --all-files
+	pre-commit run --all-files
 
 # One-off run commands
 .PHONY: translate
 translate:
-	uv run python -m google_translate_pdfs --source=$(source) --target=$(target)
+	python -m google_translate_pdfs --source=$(source) --target=$(target)
 
 .PHONY: parse-pdf
 parse-pdf:
-	uv run python -m pdf_parser
+	python -m pdf_parser
 
 .PHONY: verify-geocodes
 verify-geocodes:
-	uv run python -m geocode_verifier
+	python -m geocode_verifier
