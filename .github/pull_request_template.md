@@ -3,7 +3,3 @@
 
 ## How was it tested?
 - [ ] Manually tested code.
-
-```commandline
-PUT THE `make test` OUTPUT HERE
-```
