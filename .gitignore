@@ -12,6 +12,7 @@ notebooks/data/*.csv
 notebooks/data/*.geojson
 notebooks/data/chi_street_lines/
 notebooks/data/chicago_comm_utm/
+notebooks/data/invisible_institute/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
